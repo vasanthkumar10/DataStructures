@@ -30,25 +30,28 @@ const getPrimes = (num) => {
   // all values from 2 are set to true
   let primes = [];
   let primeValues = [];
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i <= num; i++) {
     primes[i] = true;
   }
 
   //   mark the multiples of prime as false
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i * i <= num; i++) {
     if (primes[i]) {
-      // push the prime number
-      primeValues.push(i);
-
       /**
-//    * For any number to be prime we can ceck upto the sqrt
-//    * of the number
-//    */
+       * For any number to be prime we can ceck upto the sqrt
+       * of the number
+       */
 
-      for (let j = i * i; j < num; j = j + i) {
+      for (let j = i * i; j <= num; j = j + i) {
         primes[j] = false;
       }
     }
+  }
+
+  //   push the prime numbers
+
+  for (let i = 2; i <= num; i++) {
+    if (primes[i]) primeValues.push(i);
   }
 
   return primeValues;
@@ -56,12 +59,13 @@ const getPrimes = (num) => {
 
 /**
  *
- * time complexity O(n * log(log(n)))
+ * time complexity O(n * log(n))
  *
  */
 
 // test cases
 console.log(getPrimes(0));
+console.log(getPrimes(7));
 console.log(getPrimes(10));
 console.log(getPrimes(100));
 console.log(getPrimes(200));
