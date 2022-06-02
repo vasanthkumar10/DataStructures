@@ -17,9 +17,9 @@ const modularExponentiation = (base, exponent, modulus) =>
 
 // test cases
 
-// console.log(modularExponentiation(2, 3, 5)); // works
-// console.log(modularExponentiation(6, 77, 25)); // Wrong value --> gives 8 instead of 11
-// console.log(modularExponentiation(60, 277, 105)); // failed --> NAN
+console.log(modularExponentiation(2, 3, 5)); // works
+console.log(modularExponentiation(6, 77, 25)); // Wrong value --> gives 8 instead of 11
+console.log(modularExponentiation(60, 277, 105)); // failed --> NAN
 
 // best approach
 
